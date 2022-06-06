@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form method="POST" class="full-form" style="height: 380px; margin-top: -190px;" >
+        <h3 class>Личный Кабинет</h3>
+        <input style="display: none;" type="text" name="client_id" value="<%=client_id%>">
+        <div class="form-login-group">
+            <% table.forEach(function(column){ %>
+                <% column = Object.values(column) %>
+                <div class="form-line-style">
+                    <div> Логин </div>
+                    <input type="text" name="login" value="<%=column[0]%>" placeholder="Логин"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Пароль </div>
+                    <input type="password" name="password" value="" placeholder="Новый пароль"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Имя </div>
+                    <input type="text" name="name" value="<%=column[2]%>" placeholder="Имя"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Телефон </div>
+                    <input type="text" name="phone" value="<%=column[3]%>" placeholder="Телефон"></input>
+                </div>
+            <% }); %> 
+        </div>
+
+        <div class="bottom-buttons" style="padding-top: 12px">
+            <a class="button-menu light link_button a-text" href="/ClientMainPage?client_id=<%=client_id%>">
+                Вернуться
+            </a> </button>
+            <button type="submit" class="button-menu dark">Сохранить</button>
+        </div>
+
+    </form>
+    
+</html>
+

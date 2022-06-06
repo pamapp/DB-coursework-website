@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+
+    <form class="client-dishlist">
+        <div class="menu-form-header">
+            <h3 class="menu">Список сотрудников</h3>
+        </div>
+        
+        <div class="menu-table-header" style = "padding-right: 0px;">
+            <h4 style = "width: 28%; text-align: left;"> Фамилия </h4>
+            <h4 style = "width: 23%; text-align: left;"> Имя </h4>
+            <h4 style = "width: 17%; text-align: left;"> ЗП </h4>
+            <h4 style = "width: 32%; text-align: left;"> Должность </h4>
+        </div>
+
+        <div class="menu-form-dishlist" style="height: 300px; padding-right:0px; overflow-y: scroll;">
+            <% table.forEach(function(column){ %>
+                <% column = Object.values(column) %>
+                    <a class='menu-row-button a-text' href="/AdminEmployeeDetail?employee_id=<%=column[4]%>&admin_id=<%=admin_id%>">
+                        <div style="width: 29%; text-align: left;">
+                            <%= column[0] %>
+                        </div>
+                        <div style="width: 24%; text-align: left;">
+                            <%= column[1] %>
+                        </div>
+                        <div style="width: 17%; text-align: left;">
+                            <%= column[2] %>
+                        </div>
+                        <div style="width: 30%; text-align: left;">
+                            <%= column[3] %>
+                        </div>
+                    </a>    
+    
+            <% }); %>
+        </div>
+
+        <div class="bottom-buttons">
+            <a class="button-menu light link_button a-text" href="/AdminMainPage?admin_id=<%=admin_id%>">
+                Вернуться
+            </a>
+            <a class="button-menu red link_button a-text" style="color: white;"href="/AdminDeleteEmployee?admin_id=<%=admin_id%>">
+                Удалить
+            </a>
+        </div>
+    </form>
+</html>
+

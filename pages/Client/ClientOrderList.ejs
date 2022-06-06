@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form class="client-dishlist">
+        <div class="menu-form-header">
+            <h3 class="menu">Список заказов</h3>
+        </div>
+
+            <div class="menu-table-header" style = "padding-right: 30px; padding-bottom: 5px;">
+                <h4 style = "width: 50%; text-align: left;"> Активные </h4>
+            </div>
+
+            <div class="menu-form-dishlist" style="height: 145px; padding-right:0px; overflow-y: scroll;">
+
+                <% table.forEach(function(column){ %>
+                    <% column = Object.values(column) %>
+                        <% if (column[1] != 'Выдан' && column[1] != 'Отменен') { %>
+                            <a class='menu-row-button2 a-text' id = "order_id" value = "<%= column[0] %>"
+                                href="/ClientOrderDetail?client_id=<%=client_id%>&order_id=<%=column[0]%>&status=<%=column[1]%>">
+                                <div style="width: 100%; text-align: left;">
+                                    Статус: <%=column[1]%>
+                                </div>
+                                <div style="width: 100%; text-align: left;">
+                                    Сумма заказа: <%= column[3] %> р., Дата: <%= column[2] %>
+                                </div>
+                            </a>
+                
+                        <%}%>
+                <% }); %> 
+
+            </div>
+
+                            
+            <div class="menu-table-header" style = "padding-right: 30px; padding-top: 12px; padding-bottom: 5px;">
+                <h4 style = "width: 50%; text-align: left;"> Завершенные </h4>
+            </div>
+
+            <div class="menu-form-dishlist" style="height: 210px; padding-right: 0px; overflow-y: scroll;">
+
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                            <% if (column[1] == 'Выдан' || column[1] == 'Отменен') { %>
+                                <a class='menu-row-button a-text' id = "order_id" value = "<%= column[0] %>"
+                                    href="/ClientOrderDetail?client_id=<%=client_id%>&order_id=<%=column[0]%>&status=<%=column[1]%>">
+                                    <div style="width: 100%; text-align: left; padding-left: 5px;">
+                                        Сумма заказа: <%= column[3] %> р., Дата: <%= column[2] %>
+                                    </div>
+                                </a>
+                            <%}%>
+                    <% }); %> 
+
+            </div>
+
+        <div class="bottom-buttons" style="padding-top: 15px">
+            <a class="button-menu light link_button a-text" href="/ClientMainPage?client_id=<%=client_id%>">
+                Вернуться
+            </a>
+        </div>
+    </form>
+</html>
+
+
+
+            

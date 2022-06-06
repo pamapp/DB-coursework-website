@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+        <%if (!table[1]) { %>
+            <meta http-equiv="refresh" content="0">
+        <% }; %>
+    </head>
+
+    <body>
+        <form method = "post" class="client-dishlist" style="height: 580px; margin-top: -290px;">
+            <div class="menu-form-header">
+                <h3 class="menu">Детали заказа</h3>
+            </div>
+
+            <div class="title-input-line">
+                <div> Статус </div>
+                    <input disabled selected="selected" type="text" value="<%=status%>" name="status">
+                    
+            </div>
+            
+            <input style="display: none" value = "<%=order_id%>" type="number" name="order_id">
+            <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+            
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px" > Информация </h4>
+            </div>
+            
+            <span class='active-order-info' style="position: relative; display: inline-flex; justify-content: space-between;">
+                <% function mem(table = []) { %>
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                        <% if (!column[5]) {%>
+                            <div style="width: 56%;"> Сумма заказа: <%= column[4] %> р. Клиент: <%= column[1] %> <br>Сотрудник: не назначен</div>     
+                            <div style="width: 60%;">  Дата: <%= column[3] %> Телефон: +<%= column[2] %></div>                        
+                        <%}%>
+                    <% }); %>  
+                <% }; mem(table[1]) %>  
+                <% function mem1(table = []) { %>
+                    <% table.forEach(function(column1){ %>
+                        <% column1 = Object.values(column1) %>
+                        <% if (column1) {%>
+                        <div style="width: 56%;"> Сумма заказа: <%= column1[4] %> р. Клиент: <%= column1[1] %> <br> Сотрудник: <%=column1[5]%></div>     
+                        <div style="width: 60%;">  Дата: <%= column1[3] %> Телефон: +<%= column1[2] %></div>
+                        <%}%>
+                    <% }); %> 
+                <% }; mem1(table[3]) %>  
+            </span>
+
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px"> Блюдо </h4>
+                <div class="menu-table-header">
+                    <h4 style="padding-right: 60px;"> Кол-во </h4>
+                    <h4 style="padding-right: 5px;"> Готово </h4>
+                </div>
+            </div>
+    
+            <div class="menu-form-dishlist" style="height: 195px; padding-right:0px; overflow-y: scroll;">
+                <% function mem4(table = []) { %>
+                <% table.forEach(function(column){ %>
+                    <% column = Object.values(column) %>
+                    <span class='ingredient-title-row' > 
+                        <div style="width: 65%;"><%= column[0] %></div>
+                        <div style="width: 10%; text-align: center;">
+                            <%= column[1] %>
+                        </div>
+                        <div style="width: 25%; text-align: right;">
+                            <%= column[2] %>
+                        </div>
+                </span>
+                <% }); %>  
+                <% }; mem4(table[2]) %> 
+            </div>
+
+
+            <div class="bottom-buttons">
+                <a class="button-menu light link_button a-text" href="/AdminOrderList?admin_id=<%=admin_id%>&status=">
+                    Вернуться
+                </a> 
+                <% function mem3(table = []) { %>
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                        <% if (!column[5]) {%>
+                            <a class="button-menu green" style="color: white; font-size: 16px; text-decoration: none;" href="/AdminSetEmployee?order_id=<%=order_id%>&status=<%=status%>&admin_id=<%=admin_id%>">
+                                Назначить сотрудника
+                            </a>                       
+                        <%}%>
+                    <% }); %>  
+                <% }; mem3(table[1]) %>  
+            </div>
+        </form>
+</html>
+
+
+
+            

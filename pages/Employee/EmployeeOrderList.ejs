@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form class="client-dishlist">
+        <div class="menu-form-header">
+            <h3 class="menu">Список заказов</h3>
+        </div>
+        <input style="display: none;" type="text" name="employee_id" value="<%=employee_id%>">
+            <div class="title-input-line">
+                <div> Статус </div>
+                <select name="status" id="status">
+                    <option disabled selected="selected" value='0' id='0'>
+                        <%if (!status){ %>
+                            Все заказы
+                        <%} else{ %>
+                            <%=status%>
+                        <%} %>
+                    </option>
+                    <% function mem(table = []) { %>
+                        <% table.forEach(function(column){ %>
+                            <% column = Object.values(column) %>
+                            <option value = <%=column%> id = <%=column%>> 
+                                <%=column%>
+                            </option>
+                        <% }); %>
+                    <% }; mem(table[0]) %>  
+                    <option value = '' id = 'All'>Все заказы</option> 
+                </select>
+            </div>
+
+            <div class="menu-table-header" style = "padding-right: 0px; padding-top: 20px;">
+                <h4 style = "width: 29%; text-align: left;"> Дата </h4>
+                <h4 style = "width: 24%; text-align: left;"> Клиент </h4>
+                <h4 style = "width: 27%; text-align: center;" > Телефон </h4>
+                <h4 style = "width: 20%; text-align: right;">  Сумма </h4>
+            </div>
+
+            <div class="menu-form-dishlist" style="height: 300px; padding-right:0px; overflow-y: scroll;">
+                <% table[status ? 1 : 2].forEach(function(column){ %>
+                    <% column = Object.values(column) %>
+                        <a class='menu-row-button a-text' id = "order_id" value = "<%= column[0] %>"
+                            href="/EmployeeOrderDetail?order_id=<%=column[0]%>&order_status=<%=column[5]%>&employee_id=<%=employee_id%>">
+                            <div style="width: 30%; text-align: left;">
+                                <%= column[1] %>
+                            </div>
+                            <div style="width: 21%; text-align: left;">
+                                <%= column[2] %>
+                            </div>
+                            <div style="width: 32%; text-align: left;">
+                                +<%= column[3] %>
+                            </div>
+                            <div style="width: 17%; text-align: right;">
+                                <%= column[4] %> р.
+                            </div>
+                        </a>
+                <% }); %>  
+            </div>
+            
+        <div class="bottom-buttons">
+            <a class="button-menu light link_button a-text" href="/EmployeeMainPage?employee_id=<%=employee_id%>">
+                Вернуться
+            </a> </button>
+            <button type="submit" class="button-menu dark">Обновить</button>
+        </div>
+    </form>
+    <script>
+        var order_table = 1;
+        if (document.getElementById("status").options.selectedIndex == 0) {
+            order_table = 2;
+        }
+    </script>
+</html>
+
+
+
+            

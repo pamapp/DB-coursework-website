@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+
+    <form method="post" class="client-dishlist" style="height: 200px; margin-top: -100px;">
+        <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+        <div class="menu-form-header" >
+            <h3 class="menu" style="text-align: center;">Блюдо с таким названием уже добавлено в систему!</h3>
+        </div>
+
+        <div class="bottom-buttons" style="margin-left: 185px;">
+            <a class="button-menu dark link_button a-text" style="color: #fff;" href="/AdminAddDish?admin_id=<%=admin_id%>">
+                Ок 
+            </a>
+        </div>
+    </form>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form method="POST" class="full-form" style="height: 380px; margin-top: -190px;">
+        <h3 class>Информация о сотруднике</h3>
+        <input style="display: none;"type="text" name="employee_id" value="<%=employee_id%>"></input>
+        <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+        <div class="form-login-group">
+            <% table[0].forEach(function(column){ %>
+                <% column = Object.values(column) %>
+                <div class="form-line-style">
+                    <div> Фамилия </div>
+                    <input type="text" name="surname" value="<%=column[0]%>"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Имя </div>
+                    <input type="text" name="name" value="<%=column[1]%>"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Зарплата </div>
+                    <input type="number" name="salary" value="<%=column[2]%>"></input>
+                </div>
+                <div class="form-line-style">
+                    <div> Должность </div>
+                    <input type="text" name="position" value="<%=column[3]%>"></input>
+                </div>
+            <% }); %> 
+        </div>
+        <div class="bottom-buttons" style="padding-top: 10px;">
+            <a class="button-menu light link_button a-text" href="/AdminEmployeesList?admin_id=<%=admin_id%>">
+                Вернуться
+            </a>
+            <button type="submit" class="button-menu dark">Сохранить</button>
+        </div>
+    </form>
+    
+</html>
+

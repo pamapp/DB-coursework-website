@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+
+    <form class="client-dishlist" style="height: 580px; margin-top: -290px;">
+        <input style="display: none" value ="<%=client_id%>" type="number" name="client_id" >
+        <div class="menu-form-header">
+            <h3 class="menu">Список блюд</h3>
+        </div>
+
+        <div class="title-input-line">
+            <div> Поиск </div>
+            <input type="text" id="title" name="title" placeholder="<%= title%>"></input>
+        </div>
+
+        <div style = "display: inline-flex; position: relative; right: 0px; left: 70%">
+            <input type="submit" name="popular" id=1 value='по популярности' class="popular-dishes">
+        </div>
+        
+        <div class="menu-table-header" style = "padding-left: 5px; padding-right: 10px;">
+            <h4 style = "width: 65%; text-align: left;"> Название </h4>
+            <h4 style = "width: 15%; text-align: left;"> Вес </h4>
+            <h4 style = "width: 20%; text-align: right;"> Цена </h4>
+        </div>
+
+        <div class="menu-form-dishlist" style="height: 311px; padding-right:0px; overflow-y: scroll;">
+            <% function mem(table = []) { %>
+            <% table.forEach(function(column){ %>
+                <% column = Object.values(column) %>
+                    <a class='ingredient-title-row a-text' id = "dish_id" value = "<%= column[0] %>" href="/ClientDishDetail?client_id=<%=client_id%>&dish_id=<%= column[0] %>" >
+                        <div style="width: 65%; text-align: left; padding-left: 5px; padding-top: 3px;">
+                            <%= column[1] %>
+                        </div>
+                        <div style="width: 15%; text-align: left;">
+                            <%= column[2] %> гр.
+                        </div>
+                        <div style="width: 20%; text-align: right;">
+                            <%= column[3] %> р.
+                        </div>
+                    </a>    
+    
+            <% }); %>
+            <% }; mem(table[popular === 'по популярности' ? 2 : (title ? 0 : 1)]) %>  
+            
+
+        </div>
+
+        <div class="bottom-buttons">
+            <a class="button-menu light link_button a-text" href="/ClientMainPage?client_id=<%=client_id%>">
+                Вернуться
+            </a> </button>
+            <button type="submit" class="button-menu dark">Обновить</button>
+        </div>
+    </form>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form method="POST" class="client-dishlist" style="height: 320px; margin-top: -160px;">
+        <input style="display: none;" type="number" name="dish_id" value="<%=dish_id%>">
+        <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+        <div class="menu-form-header">
+            <h3 class="menu">Блюдо</h3>
+        </div>
+
+        <% table[0].forEach(function(column){ %>
+            <% column = Object.values(column) %>
+                <div class="form-line-style">
+                    <div> Название </div>
+                    <input type="text" name="title" value="<%=column[1]%>" required>
+                </div>
+                <div class="form-line-style">
+                    <div> Стоимость </div>
+                    <input type="number" name="money" value="<%=column[2]%>" required>
+                </div>
+                <div class="form-line-style">
+                    <div> Вес </div>
+                    <input type="number" name= "weight" value="<%=column[3]%>" required>
+                </div>    
+        <% }); %>
+       
+
+        <div class="bottom-buttons"  style="padding-top: 20px;">
+            <a class="button-menu light link_button a-text" href="/AdminMenuDishDetail?dish_id=<%=dish_id%>&admin_id=<%=admin_id%>">
+                Вернуться
+            </a>
+            <button type="submit" class="button-menu dark">Сохранить</button>
+        </div>
+    </form>
+</html>
+

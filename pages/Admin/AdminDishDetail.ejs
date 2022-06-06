@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form class="detail-form">
+        <h3>Состав блюда</h3>
+        <div class="dish-details">
+            <div class="title-input-line" style="padding-bottom: 20px; padding-top: 20px; ">
+                <div> Состояние </div>
+                <select name="is_done" id="is_done">
+                    <option disabled selected="selected" value='' id=''>
+                        <%if (is_done == 'true'){ %>
+                            Готово
+                        <%} else if (is_done == 'false'){ %>
+                            Не готово
+                        <%} %>
+                    </option>
+                    <option value='true' id = '1'>Готово</option>
+                    <option value='false' id = '0'>Не готово</option>
+    
+                </select>
+            </div>
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px"> Ингредиент </h4>
+                <div class="menu-table-header">
+                    <h4 style="padding-right: 40px;"> Кол-во </h4>
+                </div>
+            </div>
+
+
+            <div class="menu-form-dishlist" style="height: 290px; padding-right:10px; overflow-y: scroll;">
+                <% table.forEach(function(column){ %>
+                    <% column = Object.values(column) %>
+                    <span class='ingredient-title-row'> 
+                        <div style="width: 65%;"><%= column[0] %></div>
+                        <div style="width: 35%; text-align: right;"> 
+                            <%= column[1] %>
+                            <%= column[2] %>
+                        </div>
+                    </span>
+                <% }); %>  
+            </div>
+
+        </div>
+        
+        <div class="bottom-buttons">
+            <a class="button-menu light link_button a-text" href="/DishList?is_done=2&admin_id=<%=admin_id%>">
+                Вернуться
+            </a> </button>
+            <button type="submit" class="button-menu green">Сохранить</button>
+        </div>
+
+    </form>
+</html>
+

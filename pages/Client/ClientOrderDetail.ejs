@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+        <%if (!table[0] || !table[1]) { %>
+            <meta http-equiv="refresh" content="0">
+        <% }; %>
+    </head>
+
+    <body>
+        <form method="post" class="client-dishlist" style="height: 580px;">
+            <div class="menu-form-header">
+                <h3 class="menu">Детали заказа</h3>
+            </div>
+            <input style="display: none" value ="<%=client_id%>" type="number" name="client_id" >
+            <input style="display: none" value = "<%=order_id%>" type="number" name="order_id">
+            <input style="display: none" value = "Отменен" type="text" name="status">
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px" > Информация </h4>
+            </div>
+            
+            <div class="menu-form-dishlist" style="height: 70px; padding-right:10px; ">
+                <% function mem1(table = []) { %>
+                <% table.forEach(function(column){ %>
+                    <% column = Object.values(column) %>
+                            <div class='menu-row-order a-text'>
+                                <div style="width: 100%; text-align: left;">
+                                    Статус: <%=column[0]%>
+                                </div>
+                                <div style="width: 100%; text-align: left;">
+                                    Сумма заказа: <%= column[2] %> р., Дата: <%= column[1] %>
+                                </div>
+                            </div>
+                <% }); %> 
+                <% }; mem1(table[0]) %>  
+            </div>
+            
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px"> Блюдо </h4>
+                <div class="menu-table-header">
+                    <h4 style="padding-right: 47px;"> Кол-во </h4>
+                    <h4 style="padding-right: 40px;"> Цена </h4>
+                </div>
+            </div>
+    
+            <div class="menu-form-dishlist" style="height: 290px; padding-right:10px; overflow-y: scroll;">
+                <% function mem(table = []) { %>
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                        <span class='ingredient-title-row' > 
+                            <div style="width: 67%;"><%= column[0] %></div>
+                            <div style="width: 10%; text-align: center;">
+                                <%= column[1] %>
+                            </div>
+                            <div style="width: 23%; text-align: right;">
+                                <%= column[2] %>
+                            </div>
+                        </span>
+                    <% }); %>  
+                <% }; mem(table[1]) %>  
+            </div>
+
+
+
+            <div class="bottom-buttons">
+                <a class="button-menu light link_button a-text" href="/ClientOrderList?client_id=<%=client_id%>">
+                    Вернуться
+                </a>
+                <% function mem2(table = []) { %>
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                            <% if (column[0] == 'Принят' || column[0] == 'Обрабатывается' || column[0] == 'Приготовлен') { %>
+                                <button type="submit" class="button-menu" style="background-color: red; color: white">Отменить</button>
+                            <%}%>
+                    <% }); %> 
+                <% }; mem2(table[0]) %>
+            </div>
+        </form>
+</html>
+
+
+
+            

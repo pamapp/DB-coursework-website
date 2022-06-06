@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+        <form method = "post" class="full-form" style="height: 240px; margin-top: -120px;">
+            <input style="display: none;" type="number" name="order_id" value="<%=order_id%>">
+            <input style="display: none;" type="text" name="status" value="<%=status%>">
+            <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+            <h3 class> Выбор сотрудника </h3>
+
+            <div class="form-line-style" style="padding-top: 20px; padding-bottom: 20px; ">
+                <div> Сотрудник </div>
+                <select type="number" name="employee_id" id="employee_id" required>
+                    <option disabled selected="selected" value="">
+                        Не выбрано
+                    </option>
+                    <% function mem(table = []) { %>
+                        <% table.forEach(function(column){ %>
+                            <% column = Object.values(column) %>
+                            <option value = "<%=column[0]%>"> 
+                                <%=column[1]%> <%=column[2]%>
+                            </option>
+                        <% }); %>
+                    <% }; mem(table[0]) %>  
+                </select>
+            </div>
+
+            
+            <div class="bottom-buttons" style="padding-top: 20px;">
+                <a class="button-menu light link_button a-text" href="/AdminOrderDetail?order_id=<%=order_id%>&status=<%=status%>&admin_id=<%=admin_id%>">
+                    Вернуться
+                </a>
+                <button type="submit" class="button-menu dark">Назначить</button>
+            </div>
+        </form>
+    </body>
+    
+</html>
+

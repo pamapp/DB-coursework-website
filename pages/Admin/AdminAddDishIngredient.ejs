@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+        <form method = "post" class="full-form" style="height: 310px; margin-top: -222px;">
+            <h3 class> Добавление ингредиента </h3>
+            
+            <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id">
+            <input style="display: none" type="number" value="<%=dish_id%>" name="dish_id">
+
+            <div class="form-line-style">
+                <div> Название </div>
+                <select type="text" name="ingr_title" id="ingr_title" required>
+                    <option disabled selected="selected" value="">
+                        Не выбрано
+                    </option>
+                    <% function mem(table = []) { %>
+                        <% table.forEach(function(column){ %>
+                            <% column = Object.values(column) %>
+                            <option value = "<%=column[1]%>"> 
+                                <%=column[1]%>
+                            </option>
+                        <% }); %>
+                    <% }; mem(table[0]) %>  
+                </select>
+            </div>
+            <div class="form-line-style">
+                <div> Количество </div>
+                <input type="number" name="amount" required>
+            </div>
+            <div class="form-line-style">
+                <div> Е.И. </div>
+                <input type="text" name="unit" required>
+            </div>
+            
+            <div class="bottom-buttons" style="padding-top: 20px;">
+                <a class="button-menu light link_button a-text" href="/AdminMenuList?admin_id=<%=admin_id%>">
+                    Вернуться
+                </a> </button>
+                <button type="submit" class="button-menu dark">Добавить</button>
+            </div>
+            
+        </form>
+    </body>
+    
+</html>
+

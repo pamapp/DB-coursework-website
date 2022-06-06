@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form class = "selection-form" style="width: 600px; margin-left: -300px; height: 570px; margin-top: -285px;" >
+        <div style="display: inline-flex; width: 90%">
+            <input style="display: none" value ="<%=admin_id%>" type="number" name="admin_id" >
+            <div class="block-select">
+                <a type="submit" class="button-select link_button big" href="/AdminOrderList?admin_id=<%=admin_id%>&status="> Заказы</a>
+                <a type="submit" class="button-select link_button big" href="/AdminMenuList?admin_id=<%=admin_id%>"> Список блюд</a>
+                <a type="submit" style="padding-top: 30px; " class="button-select link_button big" href="/AdminIngredientList?admin_id=<%=admin_id%>"> Список<br>ингредиентов</a>
+                <a class="button-select link_button big" href="/AdminLK?admin_id=<%=admin_id%>"> Личный Кабинет </a>
+            </div>
+            <div style="width: 25px;"></div>
+            <div class="block-select">
+                <a type="submit" class="button-select link_button big" href="/AdminClientsList?admin_id=<%=admin_id%>"> Список клиентов </a>
+                <a type="submit" class="button-select link_button big" href="/AdminEmployeesList?admin_id=<%=admin_id%>"> Список сотрудников </a>
+                <a type="submit" style="padding-top: 30px;" class="button-select link_button big" href="/RegEmployee?admin_id=<%=admin_id%>">Регистрация<br>сотрудника</a>
+                <a type="submit" style="margin-top: 2px;" class="button-select link_button big" href="/RegOrLoginPage">Выйти</a>
+            </div>
+            
+        </div>
+        
+    </form> 
+</html>
+ 

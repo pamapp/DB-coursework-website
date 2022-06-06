@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+
+    <form class = "selection-form" style="width: 600px; margin-left: -300px; height: 440px; margin-top: -220px;" >
+        <div style="display: inline-flex; width: 90%">
+            <div class="block-select">
+                <a type="submit" class="button-select link_button big" href="/EmployeeOrderList?employee_id=<%=employee_id%>"> Заказы </a>
+                <a type="submit" class="button-select link_button big" href="/EmployeeDishList?is_done=2&employee_id=<%=employee_id%>"> Блюда в заказах </a>
+            </div>
+            <div style="width: 25px;"></div>
+            <div class="block-select">
+                <a type="submit" class="button-select link_button big" href="/EmployeeMenuList?employee_id=<%=employee_id%>"> Список блюд</a>
+                <a type="submit" class="button-select link_button big" href="/EmployeeLK?employee_id=<%=employee_id%>"> Личный Кабинет</a>
+            </div>
+        </div>
+        <a type="submit" style="margin-top: 2px;" class="button-select link_button big" href="/RegOrLoginPage">Выйти</a>
+    </form> 
+</html>

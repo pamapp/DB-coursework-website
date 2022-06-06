@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+
+        <%if (!table[0]) { %>
+            <meta http-equiv="refresh" content="0">
+        <% }; %>
+
+    </head>
+
+    <body>
+
+    <form class="client-dishlist">
+        <h3 style="padding-bottom: 20px;">Информация о блюде</h3>
+        <div class="dish-details">
+            <div class="menu-table-header" style="padding-bottom:15px;">
+                    <% table[1].forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                            <h4 style="padding-bottom: 7px; width: 50%; text-align: left;"> Цена 
+                                <div class = "white-holder">
+                                    <div id = "price"><%=column[1]%> р.</div>
+                                </div> 
+                            </h4>
+                            <h4 style="padding-bottom: 7px; width: 50%; text-align: left;"> Вес 
+                                <div class = "white-holder">
+                                    <div id = "weight"><%=column[2]%> гр.</div>
+                                </div> 
+                            </h4> 
+                    <% }); %>  
+            </div>
+
+            <div class="menu-table-header">
+                <h4 style="padding-left: 10px; padding-bottom: 3px;"> Ингредиент </h4>             
+            </div>
+
+            <div class="menu-form-dishlist" style="height: 290px; padding-right:0px; overflow-y: scroll;">
+                <% function mem(table = []) { %>
+                    <% table.forEach(function(column){ %>
+                        <% column = Object.values(column) %>
+                        <span class='ingredient-title-row' > 
+                            <div style="width: 100%;"><%= column[0] %></div>
+                        </span>
+                    <% }); %>  
+                <% }; mem(table[0]) %>  
+            </div>
+
+        </div>
+        
+        <div class="bottom-buttons">
+            <a class="button-menu light link_button a-text" href="/ClientDishList?client_id=<%=client_id%>">
+                Вернуться
+            </a>
+        </div>
+
+    </form>
+</html>
+

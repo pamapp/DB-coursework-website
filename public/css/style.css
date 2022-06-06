@@ -1,0 +1,767 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #FAF1E6;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 40px 0;
+
+  border: 0;
+  background-color: #FAF1E6;
+}
+
+
+.select-reg {
+    position: relative;
+    display: block;
+}
+
+/* Form registration, login*/
+
+.full-form {  
+  padding: 20px;
+  margin: auto auto;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  display: block;
+  width: 500px;
+  height: 100%;
+  max-height: 580px;
+  background: #B6C9F0;
+  border: 1px solid #495464;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px;
+}
+
+.full-form h3 {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #222831;
+}
+
+.full-form h4 {
+  padding: 5px 30px;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+
+  margin: 10px;
+  align-items: left;
+  text-align: center;
+
+  color: #B5B5B5;
+}
+
+.form-login-group {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-line-style {
+  display: flex;
+  position: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.form-line-style div {
+  font-size: 16px;
+  font-weight: lighter;
+  margin: auto 0;
+}
+
+.form-line-style input {
+  height: 50px;
+  border: 1px;
+  background: #F4F4F2;
+  border-color: #000;
+  border-radius: 10px;
+  padding-left: 15px;
+  width: 70%;
+  max-width: 360px;
+  height: 40px;
+  font-size: 16px;
+  font-family: Montserrat;
+}
+
+.form-line-style select {
+  height: 50px;
+  border: 1px;
+  background: #F4F4F2;
+  border-color: #000;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 70%;
+  max-width: 360px;
+  height: 40px;
+  font-size: 16px;
+  font-family: Montserrat;
+}
+
+.tel {
+  margin-left: auto;
+}
+
+.button-login {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  width: 40%;
+  max-width: 215px;
+  height: 50px;
+  background: #495464;
+  border: 1px;
+  border-radius: 15px;
+  margin: 10px 5px 0px 0px;
+  cursor: pointer;
+  transition: color 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.button-login:hover,
+.button-login:focus {
+  border: 1.5px;
+  border-color: #495464;
+  border-style: solid;
+  box-shadow: 0px 0 7px rgba(0,0,0,.3);
+}
+
+.full-form button {
+  cursor: pointer;
+}
+
+
+/* Form selection*/
+
+.selection-form {  
+  padding: 20px;
+  margin: auto auto;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  width: 500px;
+  background: #B6C9F0;
+  border: 1px solid #495464;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px;
+}
+
+.block-select {
+  display: block;
+  width: 100%;
+}
+
+.selection-form button {
+  cursor: pointer;
+  width: 150px;
+}
+
+.button-select {
+  font-family: Montserrat;
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  width: 100%;
+  max-width: 380px;
+  height: 120px;
+  background: #FDFAF6;
+  /* color: #495464;
+  background: #FDFAF6; */
+  border: 1px;
+  border-radius: 12px;
+  margin: 10px auto;
+  padding-top: 40px;
+  cursor: pointer;
+ transition: all .2s ease;
+  /*margin: auto auto;*/
+}
+
+.link_button {
+  cursor: pointer;
+  /*position:absolute; */
+}
+
+.link_button, .link_button:hover, .link_button:focus, .link_button:active {
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.button-select:hover,
+.button-select:focus {
+  border: 1.5px;
+  border-color: #495464;
+  border-style: solid;
+  box-shadow: 0px 0 7px rgba(0,0,0,.3);
+  transition: all .2s ease;
+}
+
+/*Menu Client*/
+
+.client-dishlist {  
+  padding: 20px;
+  margin: auto auto;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: 570px;
+  top: 50%;
+  left: 50%;
+  margin-left: -270px;
+  margin-top: -285px;
+  background: #B6C9F0;
+  border: 1px solid #495464;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px;
+}
+
+.client-dishlist h3 {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: left;
+  color: #222831;
+}
+
+.menu-form-header {
+  display: inline-flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.menu {
+   margin: auto 0;
+}
+
+.popular-dish {
+  display: inline-flex;
+  margin: auto 0;
+}
+
+.popular-dish div{
+   padding-left: 10px;
+}
+
+.fa-circle {
+  color: #495464;
+  background-color: #495464;
+  border-radius: 15px;
+  font-weight: normal;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin: auto 0;
+}
+
+.menu-form-dishlist {
+  display: block;
+	text-align: left;
+}
+
+.menu-row-info {
+  color: #000;
+	display: inline-flex;
+	position: relative;
+	justify-content: space-between;
+	border-radius: 7px;
+	background: #F4F4F2;
+	padding: 7px 7px 0px 10px;
+	width: 100%;
+	height: 41px; 
+	font-size: 18px;
+}
+
+.weight-dish {
+	display: flex;
+	margin-right: auto;
+	padding-left: 5px;
+}
+
+.price-dish {
+	display: flex;
+	margin-left: auto;
+	padding-right: 15px;
+}
+
+
+.add-dish-section {
+	display: flex;
+	position: relative;
+
+}
+
+.dish-count {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 18px;
+  width: 25px;
+  max-width: 25px;
+  height: 25px;
+  border: 1px;
+  border-radius: 7px;
+  margin: 1px 7px 1px 7px;
+  cursor: pointer;
+	color: #F4F4F2;
+	background: #495464;
+  transition: color 0.3s ease 0s;
+}
+
+.menu-table-header {
+  display: flex;
+  position: center;
+  justify-content: space-between;
+  padding: 2px 2px 2px 0px;
+}
+
+.menu-table-header h4 {
+	padding-left: 8px;
+	padding-right: 10px;
+}
+
+.bottom-buttons {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.bottom-buttons {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+
+.button-menu {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  width: 40%;
+  max-width: 215px;
+  height: 50px;
+  border: 1px;
+  border-radius: 10px;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+  transition: color 0.3s ease 0s;
+  bottom: 0;
+  text-align: center;
+}
+
+.dark {
+  color: #E8E8E8;
+  background: #344CB7;
+  border: 1.5px;
+  bottom: 0;
+  border-color: #344CB7;
+  border-style: solid;
+}
+
+.green {
+  color: #E8E8E8;
+  background: #248451;
+  border: 1.5px;
+  bottom: 0;
+  border-color: #248451;
+  border-style: solid;
+}
+
+.yellow {
+  color: #E8E8E8;
+  background: #344CB7;
+  border: 1.5px;
+  bottom: 0;
+  border-color: #344CB7;
+  border-style: solid;
+}
+
+.red {
+  color: #E8E8E8;
+  background: #F05454;
+  border: 1.5px;
+  bottom: 0;
+  border-color: #F05454;
+  border-style: solid;
+}
+
+.light {
+  color: #000;
+  background: #FDFAF6;
+  border: 1.5px;
+  bottom: 0;
+  border-color: #FDFAF6;
+  border-style: solid;
+}
+
+.a-text {
+  color: #495464;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 7px;
+  bottom: 0;
+  /* display: inline-flex;
+  position: relative;
+  justify-content: space-between; */
+}
+
+.button-menu:hover,
+.button-menu:focus {
+  border: 1.5px;
+  border-color: #495464;
+  border-style: solid;
+  box-shadow: 0px 0 7px rgba(0,0,0,.3);
+}
+
+
+/*Detail Form*/
+
+.detail-form {
+  padding: 20px;
+  margin: auto auto;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 570px;
+  margin-top: -285px;
+  margin-left: -250px;
+  background: #EDEDED;
+  border: 1px solid #495464;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-form h3 {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: left;
+  color: #222831;
+}
+
+.first-line {
+  display: flex;
+  position: center;
+  padding: 30px 0;
+}
+
+.section-info {
+  display: block;
+  position: relative;
+  text-align: left;
+  align-items: left;
+  padding-right: 50px;
+}
+
+.section-info h4{
+	margin: auto auto;
+	font-size: 18px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.white-holder {
+  border-radius: 7px;
+  background: #FDFAF6;
+  padding: 7px 0 5px 10px;
+  width: 140px;
+  height: 41px; 
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.white-ingredients-holder {
+  border-radius: 7px;
+  background: #F4F4F2;
+  padding: 7px 0 5px 10px;
+  width: 100%;
+  height: 41px; 
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.big {
+	padding-top: 45px;
+}
+
+
+/*Employee dish details*/
+
+.title-input-line {
+  display: flex;
+  position: center;
+  justify-content: space-between;
+  padding: 0px 0px 10px 8px;
+}
+
+.title-input-line div {
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto 0;
+  /* padding-right: 7px; */
+}
+
+.title-input-line input {
+  height: 50px;
+  border: 1px;
+  background: #FDFAF6;
+  border-radius: 10px;
+  padding-left: 15px;
+  width: 75%;
+  max-width: 360px;
+  height: 40px;
+  font-size: 16px;
+  font-family: Montserrat;
+  color: #000;
+}
+.title-input-line select {
+  height: 50px;
+  border: 1px;
+  background: #FDFAF6;
+  border-radius: 10px;
+  padding-left: 15px;
+  width: 75%;
+  max-width: 360px;
+  height: 40px;
+  font-size: 16px;
+  font-family: Montserrat;
+  color: #000;
+}
+.ingredient-title-row {
+  font-family: Montserrat;
+  display: inline-flex;
+  position: relative;
+  border-radius: 7px;
+  background: #FDFAF6;
+  width: 100%;
+  padding: 7px 15px 7px 10px;
+  text-align: left;
+  font-size: 16px;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.title-row {
+  font-family: Montserrat;
+  display: inline-flex;
+  position: relative;
+  border-radius: 7px;
+  background: #F4F4F2;
+  width: 100%;
+  padding: 10px 15px 10px 10px;
+  text-align: left;
+  font-size: 16px;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+/*Orders info*/
+
+.active-order-info {
+	display: block;
+	position: relative;
+	justify-content: space-between;
+	border-radius: 7px;
+	background: #FDFAF6;
+	padding: 10px 15px 10px 15px;
+	width: 100%;
+	height: 100px; 
+	font-size: 17px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.order_status_line {
+	display: flex;
+	margin-right: auto;
+	padding-left: 5px;
+}
+
+.order_status_title {
+	padding-left: 5px;
+}
+
+
+
+/*Employee Orders list*/
+
+.status_input {
+  width: 90%;
+  max-width: 360px;
+  height: 50px;
+  height: 40px;
+  border: 1px;
+  background: #F4F4F2;
+  border-radius: 10px;
+  padding-left: 15px;
+  color: #000;
+  font-family: Montserrat;
+  font-style: 16px;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.status_input {
+  display: flex;
+  position: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+
+
+.popular-dishes {
+  background-color: #B6C9F0;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 12px;
+  width: 40%;
+  max-width: 135px;
+  height: 20px;
+  border: 1px;
+  border-radius: 6px;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+  transition: color 0.3s ease 0s;
+  bottom: 0;
+  text-align: center;
+  color: #495464;
+  padding: 5px 0px 25px 5px;
+}
+
+.popular-clients {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 14px;
+  width: 65%;
+  max-width: 310px;
+  height: 20px;
+  border: 1px;
+  border-radius: 6px;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+  transition: color 0.3s ease 0s;
+  bottom: 0;
+  text-align: left;
+  color: #495464;
+  padding: 5px 0px 25px 5px;
+}
+
+
+.menu-row-button2 {
+  display: block;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 7px;
+  background: #FDFAF6;
+  padding: 5px 10px 10px 10px;
+  width: 100%;
+  height: 60px; 
+  font-size: 16px;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease 0s;
+  font-family: Montserrat;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/*Employee Dishes*/
+
+.menu-row-button {
+  display: inline-flex;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 7px;
+  background: #FDFAF6;
+  color: #000;
+  padding: 8px 10px 5px 9px;
+  width: 100%;
+  height: 40px; 
+  font-size: 16px;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease 0s;
+  font-family: Montserrat;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu-row-order {
+  display: block;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 7px;
+  color: #000;
+  background: #F4F4F2;
+  padding: 5px 10px 10px 10px;
+  width: 100%;
+  height: 60px; 
+  font-size: 16px;
+  border: 1px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease 0s;
+  font-family: Montserrat;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

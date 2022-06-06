@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300i,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>"Karofood"</title>
+    </head>
+
+    <body>
+ 
+    <form method="post" class = "selection-form" style="width: 600px; margin-left: -300px; height: 440px; margin-top: -220px;" >
+        <input style="display: none;" name="client_id" type="number" value="<%=client_id%>">
+        <div style="display: inline-flex; width: 90%">
+            <div class="block-select">
+                <a class="button-select link_button big" href="/ClientDishList?client_id=<%=client_id%>"> Меню </a>
+                <a class="button-select link_button big" href="/ClientOrderList?client_id=<%=client_id%>"> Мои заказы </a>
+            </div>
+            <div style="width: 25px;"></div>
+            <div class="block-select">
+                <button type="submit" style="width: 245px; padding-top: 0;" class="button-select link_button big">Создание заказа</button>
+                <a class="button-select link_button big" href="/ClientLK?client_id=<%=client_id%>"> Личный Кабинет </a>
+            </div>
+        </div>
+        <a style="margin-top: 2px;" class="button-select link_button big" href="/RegOrLoginPage">Выйти</a>
+    </form> 
+</html>
