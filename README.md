@@ -1,36 +1,14 @@
-# Что нужно сделать?
+# DataBase Coursework
+Takeaway restaurant management software example.
 
-Первым делом скачать node.js, качается очень просто
-https://nodejs.org/en/download/
+## Technology Stack
 
+| Languages           | ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white) |
+| :--- | :--- |
+| **Software development**   | ![NodeJs](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) |
+| **Interface development**  | ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Adobe Photoshop](https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white) |
+| **Frameworks**         | ▪️ SwiftUI<br> ▪️ CoreData<br> ▪️ Combine<br> ▪️ Foundation<br> ▪️ CoreLocation<br> ▪️ MapKit |
 
-## После того как репозиторий будет скопирован прописать в терминале
-
-`npm install`
-
-по идее) если не получится, разберёмся
-
-
-## для подключения к бд нужно изменить 
-
-```javascript
-var config = {  
-    server: 'DESKTOP-5PENVSL',   \\ Название сервера
-    authentication: {
-        type: 'default',
-        options: {
-            userName: 'HEHEH', 
-            password: '1'  
-        }
-    },
-    options: {
-        database: 'Session'  \\ Название БД
-    }
-};
-```
-
-Название своего сервера можно посмотреть в sql server profiler (Я скопировал оттуда и всё заработало)
+<br>
 
 
-## Для запуска проекта нужно прописать в терминале
-` node index.js `
